@@ -41,6 +41,7 @@
 #include <bits/exception_defines.h>
 #include <bits/functional_hash.h>
 #include <bits/enable_special_members.h>
+#include <memory_resource>
 
 namespace std _GLIBCXX_VISIBILITY(default)
 {
@@ -62,7 +63,7 @@ namespace pmr {
 
 
 	template<typename _Tp>
-	using optional = conditional_t<uses_allocator<_Tp, polymorphic_allocator<void>>::value,
+	using optional = conditional_t<uses_allocator<_Tp, pmr::polymorphic_allocator<void>>::value,
 		  __pmroptional<_Tp> , std::optional<_Tp>>;
 }
 

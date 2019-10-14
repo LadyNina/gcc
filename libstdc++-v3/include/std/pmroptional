@@ -89,9 +89,7 @@ namespace pmr {
       {
 		if (__other._M_engaged)
 		{
-	  		::new ((void*)std::__addressof(this->_M_payload._M_value)) 
-	  				_Stored_type(__other._M_get());
-	  		this->_M_engaged = true;
+	  		this->_M_construct(__other._M_get());
 	  	}
       }
 
@@ -102,9 +100,7 @@ namespace pmr {
  	  {
 		if (__other._M_engaged)
 		{
-	  		::new ((void*)std::__addressof(this->_M_payload._M_value)) 
-	  			_Stored_type(std::move(__other._M_get()));
-	  		this->_M_engaged = true;
+	  		this->_M_construct(std::move(__other._M_get()));
 	  	}
       }
 
@@ -348,9 +344,7 @@ template <typename _Tp>
       {
 		if (__other._M_engaged)
 		{
-	  		::new ((void*)std::__addressof(this->_M_payload._M_value)) 
-	  				_Stored_type(__other._M_get());
-	  		this->_M_engaged = true;
+	  		this->_M_construct(__other._M_get());
 	  	}
       }
 
@@ -360,9 +354,7 @@ template <typename _Tp>
  	  {
 		if (__other._M_engaged)
 		{
-	  		::new ((void*)std::__addressof(this->_M_payload._M_value)) 
-	  			_Stored_type(std::move(__other._M_get()));
-	  		this->_M_engaged = true;
+	  		this->_M_construct(std::move(__other._M_get()));
 	  	}
       }
 
@@ -501,9 +493,7 @@ template <typename _Tp>
       {
 		if (__other._M_engaged)
 		{
-	  		::new ((void*)std::__addressof(this->_M_payload._M_value)) 
-	  				_Stored_type(__other._M_get());
-	  		this->_M_engaged = true;
+	  		this->_M_construct(__other._M_get());
 	  	}
       }
 
@@ -513,9 +503,7 @@ template <typename _Tp>
  	  {
 		if (__other._M_engaged)
 		{
-	  		::new ((void*)std::__addressof(this->_M_payload._M_value)) 
-	  			_Stored_type(std::move(__other._M_get()));
-	  		this->_M_engaged = true;
+	  		this->_M_construct(std::move(__other._M_get()));
 	  	}
       }
 
